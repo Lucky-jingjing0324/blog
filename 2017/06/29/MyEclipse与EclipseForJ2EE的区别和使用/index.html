@@ -1,0 +1,215 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="jingjing">
+    
+    <meta name="description" content="一.MyEclipse与Eclipse的使用是一样的，发布时不一样的
+Eclipse运行服务时不会拷贝WebContent下的文件D:\apache-tomcat-7.0.47\webapps
+workspace\.metadata\.plugins\org.eclipse.wst.server.c">
+    
+    
+
+    
+    <link rel="alternative" href="YOUR_RSS_ADDRESS" title="blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/blog/favicon.png">
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MyEclipse与EclipseForJ2EE的区别和使用 | blog</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/blog/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/blog/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/blog/js/jquery-2.1.0.min.js"></script>
+    
+    <script src="/blog/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="/blog/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a target="_blank" class="navbar-brand" href="https://github.com/Lucky-jingjing0324" title="blog">blog</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index"><a href="/blog">首页</a></li>
+                    
+                    <li id="nav-archives"><a href="/blog/archives">归档</a></li>
+                    
+                    
+                    <li><a href="https://github.com/Lucky-jingjing0324" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <script>
+    var backRoot = "/blog/images/background/";
+    var backArray = [ "1.jpg", "2.jpg", "3.jpg",  ];
+        
+    $(function() {
+        // page-id...
+        var pageId = "2017/06/29/MyEclipse与EclipseForJ2EE的区别和使用/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+        
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>MyEclipse与EclipseForJ2EE的区别和使用</h1>
+        
+        <div class="time-info">
+发表于:<time datetime="2017-06-29T08:30:58.920Z" itemprop="datePublished">2017-06-29</time>，更新于:<time datetime="2017-06-30T03:53:22.000Z" itemprop="dateModified">2017-06-30</time>，By <a href="https://github.com/Lucky-jingjing0324" title="jingjing">jingjing</a>
+        </div>
+        
+        <div class="post-body-inner">
+            <div id="toc" class="toc-article well">
+                <strong class="toc-title">大纲</strong>
+                
+            </div>
+            
+            <p>一.MyEclipse与Eclipse的使用是一样的，发布时不一样的</p>
+<pre><code>Eclipse运行服务时不会拷贝WebContent下的文件D:\apache-tomcat-7.0.47\webapps
+workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\下多一个项目名里面是webContext里的文件
+
+MyEclipse运行服务时会拷贝WebRoot下的文件到D:\apache-tomcat-7.0.47\webapps
+</code></pre><p>二.MyEclipse<br>1.MyEclipse</p>
+<pre><code>D:\apache-tomcat-7.0.47\webapps文件下文件有：
+docs
+examples
+host-manager
+manager
+ROOT
+</code></pre><p>2.MyEclipse 启动服务</p>
+<pre><code>方法一：项目名右键-&gt;Run As -&gt;MyEclipse Server Application
+
+方法二：(1)启动tomcat服务
+
+    &quot;像小冰箱的图标&quot;Tocat 7.x-&gt; Start
+
+    (2)部署
+        1. 单击像小冰箱的图标的左边图标
+            《&quot;像小冰箱的图标的左边图标叫Deploy MyEclipse J2EE Project to Server...(部署MyEclipse J2EE 项目到服务器)》
+        2. Project:选择项目 -&gt;Add 
+        3. Server:选择Tomcat 7.x 
+        4. Deploy location：D:\apache-tomcat-7.0.47\webapps\项目名自动将WebRoot下文件拷贝到D:\apache-tomcat-7.0.47\webapps下并且把WebRoot的名字改成项名
+</code></pre><p>三.Eclipse </p>
+<pre><code>1.Window -&gt;Preferences -&gt;Server -&gt;Runtime Environments(运行环境)-&gt;Add-&gt;D:\apache-tomcat-7.0.47
+
+2.Workspace文件下多了一个Servers文件
+    Workspace-&gt;Servers-&gt; Tomcat v7.0 Server at localhost -&gt; config
+    catalina.policy
+    catalina.properties
+    context.xml
+    server.xml
+    tomcat-users.xml
+    web.xml
+</code></pre><p>四.公司开发部署tomcat上</p>
+<pre><code>部署方法一：
+1.webContext下的文档压缩包
+    项目名右键-&gt;Export-&gt;WAR file -&gt;Web project:test -&gt;Browse:D:\test.war (war:web application 文档) -&gt;Finish
+
+
+2.复制test.war文件到D:\apache-tomcat-7.0.47\webapps
+
+3.手动启动tomcat应用
+          1.ctrl+R，输入cmd-&gt;确定
+
+    2.C:\&gt;d: 进入d盘，因为Tomcat安装在d盘
+
+    3.D:\&gt;cd apache-tomcat-7.0.47
+
+    4.D:\apache-tomcat-7.0.47&gt;cd bin
+
+    5,D:\apache-tomcat-7.0.47\bin&gt;startup.bat  这时出现Tomcat窗口
+
+    自动将test.war文件解压
+
+4.打开浏览器输入http://localhost:8080/项目名字-&gt;回车就可以访问到了
+
+部署方法二：
+1.手动启动tomcat应用
+2.修改用户名和密码
+    打开浏览器输入http://localhost  
+    单击Manager App(管理应用程序)-&gt;确定 出现401页面
+    D:\apache-tomcat-7.0.47\conf\tomcat-users.xml右键编辑
+    添加在401页面上出现的语句
+
+    &lt;role rolename =&quot;manager-gui&quot;/&gt;
+    &lt;user username=&quot;tomcat&quot; password=&quot;tomcat&quot; roles=&quot;manager-gui/&gt;
+
+
+3.重启服务器
+    输入sgutdown.bat -&gt;startup
+    打开浏览器输入http://localhost  
+    单击Manager App(管理应用程序)-&gt;确定
+    进入页面找到Deploy（部署）-&gt;WAR file to deploy-&gt;浏览找到        test.war文件-&gt;Deploy 然后就部署上去了-&gt;点击test就可以访问了
+</code></pre>
+
+			
+            <section class="comment">
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="/blog/2017/06/29/MyEclipse与EclipseForJ2EE的区别和使用/" data-title="MyEclipse与EclipseForJ2EE的区别和使用" data-url="https://github.com/Lucky-jingjing0324/blog/2017/06/29/MyEclipse与EclipseForJ2EE的区别和使用/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"YOUR_DUOSHUO_SHORT_NAME"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+</section>
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+    	<br />
+        <small>this blog power by <a href="https://hexo.io/" target="_blank">Hexo</a><br />
+        <small>&copy; 2014 jingjing</small>
+    </footer>
+
+    
+
+
+</body>
+</html>
+

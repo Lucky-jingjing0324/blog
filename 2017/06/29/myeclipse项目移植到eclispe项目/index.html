@@ -6,6 +6,10 @@
     
     <meta name="author" content="jingjing">
     
+    <meta name="description" content="1.打开eclipse项目文件
+2.将myeclipse项目文件拷贝到eclipse的workspace
+3.eclipse中右键Import-&amp;gt;Import…-&amp;gt;General-&amp;gt;Existing Project into Workspace -&amp;gt;Browse…（选择项目的">
+    
     
 
     
@@ -19,7 +23,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Archives: 2017/1 | blog</title>
+    <title>myeclipse项目移植到eclispe项目 | blog</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/blog/bootstrap/css/bootstrap.min.css">
@@ -74,7 +78,7 @@
         
     $(function() {
         // page-id...
-        var pageId = "archives/2017/01/index.html";
+        var pageId = "2017/06/29/myeclipse项目移植到eclispe项目/";
         pageId = pageId.substr(0, pageId.indexOf("/"));
         if(pageId === "") pageId = "index";
         
@@ -82,49 +86,50 @@
     });
     </script>
 
-    
-
-<div class="container archive-body">
-    <div class="row">
-        <div class="container well">
-            <h2 class="archive-icon">2017/1</h2>
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/06/">六月 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">一月 2017</a><span class="archive-list-count">1</span></li></ul>
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>myeclipse项目移植到eclispe项目</h1>
+        
+        <div class="time-info">
+发表于:<time datetime="2017-06-29T08:03:33.920Z" itemprop="datePublished">2017-06-29</time>，更新于:<time datetime="2017-06-29T08:28:26.000Z" itemprop="dateModified">2017-06-29</time>，By <a href="https://github.com/Lucky-jingjing0324" title="jingjing">jingjing</a>
         </div>
         
-        <div class="col-xs-12">
+        <div class="post-body-inner">
+            <div id="toc" class="toc-article well">
+                <strong class="toc-title">大纲</strong>
+                
+            </div>
             
-            <article class="post">
-                <div class="jumbotron">
-                    <h1><a href="/blog/2017/01/03/Exception/" title="Exception">Exception</a></h1>
+            <p>1.打开eclipse项目文件</p>
+<p>2.将myeclipse项目文件拷贝到eclipse的workspace</p>
+<p>3.eclipse中右键Import-&gt;Import…-&gt;General-&gt;Existing Project into Workspace -&gt;Browse…（选择项目的路径）-&gt;Finish</p>
+<p>4.导入的项目引用的库是myeclipse<br>    (1)右键-&gt; Build Path -&gt;Congigure Build Path… -&gt;选中melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER  -&gt; Remove<br>    (2)选中EAR Libraries -&gt;Remove</p>
+<p>5.导入servletjar包<br>    Add External JARs…(导入外部的jar包)-&gt;D:\apache-tomcat-7.0.47\lib\servlet-api.jar</p>
+<p>必要的jarbao<br>servlet-api.jar<br>el-api.jar<br>jasper-el.jar<br>jasper-el.jar<br>jsp-api.jar</p>
 
-                    
-                        <div>异常处理简介
-Throwable：所有不正常类都继承Throwable
-Throwable包括Error和Exception
-Erro：虚拟机错误（VituolMachineError）和线程死锁（ThreadDeath）
-Exception：编译，环境，用户操作输入出现异常
-E</div>
-                    
 
-                    <p class="say-title">
-                        
-                        <a href="https://github.com/Lucky-jingjing0324" target="_blank" title="jingjing">jingjing</a>
-                        2017-01-03
-                    </p>
-                </div>
-            </article>
-            
-            
-            
+			
+            <section class="comment">
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="/blog/2017/06/29/myeclipse项目移植到eclispe项目/" data-title="myeclipse项目移植到eclispe项目" data-url="https://github.com/Lucky-jingjing0324/blog/2017/06/29/myeclipse项目移植到eclispe项目/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"YOUR_DUOSHUO_SHORT_NAME"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+</section>
         </div>
     </div>
-</div>
-
-<script>
-$(function() {
-    $(".archive-list-count").addClass("badge");
-});
-</script>
+</article>
 
     <footer id="footer">
     	<br />
